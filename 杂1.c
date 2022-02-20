@@ -77,7 +77,7 @@ int main()
 
 //void my_strcpy(char* dest, char* src)
 //{
-//	assert(dest != NULL);
+//	assert(dest != NULL);    //若是这样的，会终止程序，并打印错误信息
 //	assert(src != NULL);
 //	while (*dest++ = *src++)
 //	{
@@ -114,6 +114,79 @@ int main()
 	char arr1[] = "################";
 	char arr2[] = "bit";
 	printf("%s", my_strcpy(arr1, arr2));
+
+	return 0;
+}
+
+//====================================qsort排序==============================================
+//可以进行任何数据的排序
+
+struct Stu
+{
+	char name[20];
+	int age;
+};
+
+int cmp_int(const void* e1, const void* e2)
+{
+	return *(int*)e1 - *(int*)e2;
+}
+
+int cmp_float(const void* e1, const void* e2)
+{
+	if (*(float*)e1 == *(float*)e2)
+		return 0;
+	else if (*(float*)e1 > *(float*)e2)
+		return 1;
+	else
+		return -1;
+}
+
+int cmp_stu_by_age(const void* e1, const void* e2)
+{
+	return ((struct Stu*)e1) -> age - ((struct Stu*)e2) -> age;
+	//若是字符串比较要用strcmp
+}
+
+void test1()	//整形数组的比较
+{
+	int arr1[] = { 9,8,7,6,5,4,3,2,1,0 };
+	int sz1 = sizeof(arr1) / sizeof(arr1[0]);
+	qsort(arr1, sz1, sizeof(arr1[0]), cmp_int);
+
+	int i = 0;
+	for (i = 0; i <= sz1 - 1; i++)
+	{
+		printf(" %d", arr1[i]);
+	}
+}
+
+void test2()	//小数数组的比较
+{
+	float arr2[] = { 9.0,8.0,7.0,6.0,5.0,4.0 };
+	int sz2 = sizeof(arr2) / sizeof(arr2[0]);
+	qsort(arr2, sz2, sizeof(arr2[0]), cmp_float);
+
+	int j = 0;
+	for (j = 0; j <= sz2 - 1; j++)
+	{
+		printf(" %f", arr2[j]);
+	}
+}
+
+void test3()	//结构体的比较
+{
+	struct Stu s[3] = { { "zhangsan", 20 }, { "lisi", 30 }, { "wangwu", 10 } };
+	int sz3 = sizeof(s) / sizeof(s[0]);
+	qsort(s, sz3, sizeof(s[0]), cmp_stu_by_age);
+}
+
+int main()
+{
+	test1();
+	printf("\n");
+	test2();
+	test3();
 
 	return 0;
 }
