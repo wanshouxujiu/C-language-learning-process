@@ -8,7 +8,7 @@ int cmp_int(const void* e1, const void* e2)
 void swap(char* buf1, char* buf2, int width)
 {
 	int i = 0;
-	for (i = 0; i < width; i++)	//widthĞ­ÖúvoidÀïµÄÊı¾İ¼ÆËã
+	for (i = 0; i < width; i++)	//widthååŠ©voidé‡Œçš„æ•°æ®è®¡ç®—
 	{
 		char tmp = *buf1;
 		*buf1 = *buf2;
@@ -27,8 +27,8 @@ void bubble_sort(void* base, int sz, int width, int (*cmp)(void* e1, void* e2))
 		for (j = 0; j < sz - 1 - i; j++)
 		{
 			if (cmp((char*)base + j * width, (char*)base + (j + 1) * width) > 0)
-				//void²»ÄÜ¼Ó¼õºÍ½âÒıÓÃ£¬ÒªÇ¿ÖÆÀàĞÍ×ª»»
-				//widthÊÇÃ¿¸öÔªËØ£¨½á¹¹Ìå£©µÄ³¤¶È
+				//voidä¸èƒ½åŠ å‡å’Œè§£å¼•ç”¨ï¼Œè¦å¼ºåˆ¶ç±»å‹è½¬æ¢
+				//widthæ˜¯æ¯ä¸ªå…ƒç´ ï¼ˆç»“æ„ä½“ï¼‰çš„é•¿åº¦
 			{
 				swap((char*)base + j * width, (char*)base + (j + 1) * width, width);
 			}
