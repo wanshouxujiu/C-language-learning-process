@@ -58,7 +58,7 @@ int main()
 	int* pa = &a;
 	int** ppa = &pa;//二级指针
 
-	**ppa = 20;
+	**ppa = 20; //解第一次出现的是a的地址
 	printf("%d", a);
 
 	return 0;
