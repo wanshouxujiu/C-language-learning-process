@@ -115,7 +115,7 @@ int main()
 //	
 //	printf("%d\n", num);  //此时‘num’是可以改的，与const相驳
 //
-//	p = &num2;            //但此时指针变量‘p’无法被重新赋值，因为const
+//	p = &num2;            //但此时指针变量‘p’无法被重新赋值，因为const        const int* p == int const* p ！= int* const p
 //
 //	return 0;
 //}
