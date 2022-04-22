@@ -118,7 +118,7 @@ int main()
 	//	int mid = (left + right) / 2;
 	//	if (arr[mid] > k)
 	//	{
-	//		right = mid - 1;//加和减不要搞反
+	//		right = mid - 1;        //加和减不要搞反,-1为了进一步缩小查找范围
 	//	}
 	//	else if (arr[mid] < k)
 	//	{
