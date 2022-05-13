@@ -1,5 +1,7 @@
 #include<stdio.h>
 
+//C语言定义变量只能在开头，也就是 { 的后面
+
 int main()
 {
 	int a, b, c = 2;    //这样连续赋值只有 c 赋到了2
