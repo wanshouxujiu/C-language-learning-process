@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+～#define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 
 //二进制反码按位取反
@@ -152,7 +152,7 @@
 int main()
 {
 	int c = 1;
-	c + --c;        //而这里不能确定c是先准备好1还是算完--c后第一个c才准备好1(不同编译器不一样)
+	//c + --c;        //而这里不能确定c是先准备好1还是算完--c后第一个c才准备好1(不同编译器不一样)
 	printf("%d", c);//所以这类表达式是存在问题的
 
 	return 0;
