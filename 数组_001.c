@@ -11,7 +11,7 @@
 //
 //	char arr4[] = "abcdef";//自动推算个数
 //	printf("%d\n", sizeof(arr4));
-//	printf("%d\n", strlen(arr4));//如果strlen找不到\n它就无法算出字符串长度
+//	printf("%d\n", strlen(arr4));//如果strlen找不到\0它就无法算出字符串长度
 //
 //	return 0;
 //}
